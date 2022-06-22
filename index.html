@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bookshelf Apps</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="assets/images/logo_bookshelfApps.png" class="logo" alt="logo Bookshelf Apps">
+            </a>    
+            <div id="icon-menu" onclick="iconMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="clear"></div>
+            <nav id="nav-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#addData">Tambah Data</a>
+                <a href="#searchData">Cari Data</a>
+                <a href="#viewData" class="button" style="color: #fff; font-weight: normal;">Lihat Data</a>
+            </nav>
+        </header>
+
+        <main>
+            <div id="content">
+                <section class="card" id="beranda">
+                    <div class="container-beranda">
+                        <div class="box-beranda">
+                            <img src="assets/images/ilustrasi_beranda.png" class="feature-image-beranda" alt="ilustrasi beranda">
+                        </div>
+                        <div class="box-beranda">
+                            <div class="title">
+                                <h1>Bookshelf Apps</h1>
+                                <p>Solusi Penyimpanan data buku Anda.</p>
+                                <a href="#addData" class="button" style="color: #fff; font-weight: normal;">
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="addData" style="background-color: whitesmoke;">
+                    <div class="container-addData">
+                        <div class="box-addData form-input">
+                            <h2>Masukkan Data Buku Baru</h2>
+                            <form id="inputBook">
+                                <div class="input">
+                                    <label for="inputBookTitle">Judul</label>
+                                    <input id="inputBookTitle" type="text" required>
+                                </div>
+                                <div class="input">
+                                    <label for="inputBookAuthor">Penulis</label>
+                                    <input id="inputBookAuthor" type="text" required>
+                                </div>
+                                <div class="input">
+                                    <label for="inputBookYear">Tahun</label>
+                                    <input id="inputBookYear" type="number" required>
+                                </div>
+                                <div class="input_inline">
+                                    <label for="inputBookIsComplete">Selesai dibaca</label>
+                                    <input id="inputBookIsComplete" type="checkbox" onclick="changeBookshelfText()">
+                                </div>
+                                <button id="bookSubmit" type="submit">Tambahkan data buku ke rak 
+                                    <span id="bookshelfText">Belum selesai dibaca</span></button>
+                            </form>
+                        </div>
+                        <div class="box-addData">
+                            <img src="assets/images/ilustrasi_tambahdata.png" class="feature-image-addData" alt="ilustrasi tambah data">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="searchData" style="background-color: rgb(72,155,213);">
+                    <div class="container-search">
+                        <h2>Cari Data Buku</h2>
+                        <form id="searchBook">
+                            <label for="searchBookTitle">Judul</label>
+                            <input id="searchBookTitle" type="text" required>
+                            <button id="searchSubmit" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Cari</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="card" id="viewData" style="background-color: whitesmoke">
+                    <h2 class="bookshelf-title"><i class="fa fa-bookmark" aria-hidden="true"></i> Rak Buku</h2>
+                    <div class="container-viewData">
+                        <div class="book_shelf">
+                            <h3 class="container-header"><i class="fa fa-book" aria-hidden="true"></i> Belum selesai dibaca</h3>
+                            <div id="incompleteBookshelfList" class="book_list">
+                            </div>
+                        </div>
+                        <div class="book_shelf">
+                            <h3 class="container-header"><i class="fa fa-book" aria-hidden="true"></i> Selesai dibaca</h3>
+                            <div id="completeBookshelfList" class="book_list">
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&#169; 2022 <span>Bookshelf Apps</span> - All Right Reserved</p>
+        </footer>
+
+        <script src="assets/js/script.js" type="text/javascript"></script>
+    </body>
+</html>
